@@ -431,7 +431,7 @@
         </div>
         
         <!-- Newsletter Div -->
-        <div class="col col-sm container border border-success mt-4 ms-1 newsletterDiv text-center">
+        <div class="col col-sm container border border-success mt-4 ms-auto me-auto newsletterDiv text-center">
             <h2 class="mb-4 textbreak text-light">Rimani Aggiornato!</h1>
             <label for="inputNewsletter " class="textbreaak fw-light text-light">Inserisci la tua mail per iscriverti alla newsletter di RentACar.com!</p>
             <div class="input-group" id="inputNewsletter">
