@@ -34,41 +34,31 @@ div.newsletterDiv {
 /* line 39, ../../Google Drive/File VS Code/LTW/ProgettiLTW/scss/style.sass */
 .normalCard {
   background-color: white;
+  border-color: rgba(12, 12, 12, 0.494);
 }
+.normalCard span{
+  color: #292b2c;
+  margin: auto;
+  border-bottom: 3px #292b2c solid;
+  
+}
+
 .activeCard {
   background-color: inherit;
-  color: white;
+  border-color: white;
 }
-
-/* line 43, ../../Google Drive/File VS Code/LTW/ProgettiLTW/scss/style.sass */
-.normalSpanCard {
-  /* font-size: 2em; */
-  margin: auto;
-  border-bottom: 2px white solid;
-}
-
-/* line 48, ../../Google Drive/File VS Code/LTW/ProgettiLTW/scss/style.sass */
-.activeSpanCard {
-  /* font-size: 2em; */
+.activeCard span{
   color: red;
   margin: auto;
   border-bottom: 5px red solid;
 }
+
 .dinamicDiv{
   background-color: inherit;
 }
 
 .toBeArrotondato{
   border-radius: 10px;
-}
-/*# sourceMappingURL=style.css.map */
-
-.gitIcon{
-  color: white;
-}
-
-.gitIcon:hover{
-  color: white;
 }
 
 .buttone{

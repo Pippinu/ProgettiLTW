@@ -49,30 +49,36 @@ $(document).ready(function(){
         }
     });
 
-    // $('.normalCard').click(function(){
-    //     $('.normalCard').removeClass('activeCard');
-    //     $(this).addClass('activeCard');
+    //Seleziono le 3 card del div ajaxCardsDiv che le contiene
+    var ajaxCards = $('#ajaxCardsDiv div');
 
-    //     $('.normalCard').children('span').removeClass('activeSpanCard');
-    //     $(this).children('span').addClass('activeSpanCard');
+    ajaxCards.each(function(){
+        $(this).click(function(){
+            if(!$(this).hasClass('activeCard')){
+                //Rimuovo a tutti la classe activeCard cosi da non avere conflitti
+                ajaxCards.each(function(){
+                    if($(this).hasClass('activeCard')){
+                        $(this).addClass('normalCard');
+                        $(this).removeClass('activeCard');
 
-    //     $('.normalCard').children('span').removeClass('activeSpanCard');
+                        if($(this).children('span').hasClass('fs-2')){
+                            $(this).children('span').removeClass('fs-2');
+                            $(this).children('span').addClass('fs-4');
+                        }
+                    } 
+                })
+                $(this).removeClass('normalCard');
+                $(this).addClass('activeCard');
 
-    //     for(let i = 0; i < $('.normalCard').length; i++){
-    //         if($('.normalCard').get(i).children('span').hasClass('fs-2') && $('.normalCard')[i] !== $(this)){
-    //             $('.normalCard')[i].children('span').removeClass('fs-2');
-    //             $('.normalCard')[i].children('span').addClass('fs-4');
+                if($(this).children('span').hasClass('fs-4')){
+                    $(this).children('span').removeClass('fs-4');
+                    $(this).children('span').addClass('fs-2');
+                }
+            }
 
-    //             $(this).children('span').removeClass('fs-4');
-    //             $(this)[i].children('span').addClass('fs-2');
-    //         }
-    //     }
-    //     $(this).children('span').addClass('fs-2');
-
-    //     if($(this).attr('id') === 'offerteDiv'){
-    //         $('#dinamicDiv').load('../html/offerte.html');
-    //     }
-    // });
+            $('#dinamicDiv').load('../html/' + $(this).attr('id') + '.html');
+        })
+    })
 
     $('#btnFiltraOrdina').click(function(){
         if($(this).hasClass('rounded-top')){

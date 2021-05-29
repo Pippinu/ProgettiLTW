@@ -415,19 +415,19 @@
                 </div>
             </div>
             <!-- Box 3 Cose AJAX -->
-            <div class="row rowCards text-dark mt-2 px-0 mx-lg-1 mx-md-1 justify-content-lg-center justify-content-md-center">
-                <div id="offerteDiv" class="col card normalCard border border-2 activeCard">
+            <div id="ajaxCardsDiv" class="row rowCards text-dark mt-4 px-0 mx-lg-1 mx-md-1 justify-content-lg-center justify-content-md-center">
+                <div id="prezzi" class="col card normalCard activeCard">
                     <span class="text-center fs-2 normalSpanCard activeSpanCard">Scopri i nostri prezzi!</span>
                 </div>
-                <div class="col card normalCard border border-2">
+                <div id="sceglinoi" class="col card normalCard">
                     <span class="text-center fs-4 normalSpanCard">Perche scegliere noi?</span>
                 </div>
-                <div class="col card normalCard border border-2">
+                <div id="offerte" class="col card normalCard">
                     <span class="text-center fs-4 normalSpanCard">Offerte del mese!</span>
                 </div>
             </div>
 
-            <div id="dinamicDiv" class="dinamicDiv text-center text-light"></div>
+            <div id="dinamicDiv" class="dinamicDiv text-light"></div>
         </div>
         
         <!-- Newsletter Div -->
