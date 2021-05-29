@@ -1,6 +1,8 @@
 /* line 15, ../../Google Drive/File VS Code/LTW/ProgettiLTW/scss/style.sass */
 div.searchDiv {
-  background-color: inherit;
+  background-image: url("../img/foto2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: auto;
   /* min-width: 500px */
   width: 100%;
