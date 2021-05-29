@@ -372,7 +372,7 @@
                 <div class="col-6 container searchDiv mt-4 px-3 pb-3 pt-3">
                     <form action="../php/rentCatalogPage.php" method="POST" class="needs-validation" id="noleggioForm">
                         <div class="h2 row mb-2">
-                            <p class="text-center text-light">Noleggiami! <br> Tutto piu semplice con RentACar.com</p>
+                            <p class="text-center text-dark">Noleggiami! <br> Tutto piu semplice con RentACar.com</p>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
@@ -380,14 +380,14 @@
                             </div>
                         </div>
                         <div class="row">
-                            <label class="text-light text-center mb-3">Periodo Noleggio</label>
+                            <label class="text-dark text-left text-uppercase mb-3">Periodo Noleggio</label>
                         </div>
                         <!-- Riga Input Date -->
                         <div class="row mb-1">
                             <div class='col-lg-5 col-md-6 col-sm-6'>
                                 <div class="input-group mb-2">
                                     <input id="dateStart" type="text" name="dataDa" class="form-control" placeholder="Data inizio noleggio" aria-label="Data inizio noleggio" aria-describedby="basic-addon2">
-                                    <button class="btn btn-outline-secondary rounded-0 rounded-end input-group-text" type="button" id="calendarIconStart">
+                                    <button class="btn btn-secondary btn-success rounded-0 rounded-end input-group-text" type="button" id="calendarIconStart">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
                                             <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                         </svg>
@@ -398,7 +398,7 @@
                                 <div class="input-group">
                                     <input id="dateEnd" type="text" name="dataA" class="form-control date" placeholder="Data fine noleggio" aria-label="Data fine noleggio" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary rounded-0 rounded-end input-group-text" type="button" id="calendarIconEnd">
+                                        <button class="btn btn-secondary btn-success rounded-0 rounded-end input-group-text" type="button" id="calendarIconEnd">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
                                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                             </svg>
