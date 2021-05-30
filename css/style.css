@@ -50,9 +50,9 @@ div.newsletterDiv {
   border-color: white;
 }
 .activeCard span{
-  color: red;
+  color: darkgoldenrod;
   margin: auto;
-  border-bottom: 5px red solid;
+  border-bottom: 5px darkgoldenrod solid;
 }
 
 .dinamicDiv{
@@ -97,4 +97,20 @@ div.newsletterDiv {
     display: inline-block;
     vertical-align: middle;
   }
+}
+
+.lightMainDiv{
+  background-color: rgba(255, 255, 255, 0.686);
+}
+
+#mainDiv input:focus, #signInModal input:focus{
+  border-color: rgba(25, 135, 84, 1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 10px rgba(25, 135, 84, 1);;
+  outline: 0 none;
+}
+
+#signUpModal input:focus{
+  border-color: rgba(13, 110, 253, 1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 10px rgba(13, 110, 253, 1);;
+  outline: 0 none;
 }

@@ -574,11 +574,13 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div class="container d-inline-flex">
-                                    <div class="col-6">
+                                <div class="container d-grid">
+                                    <!-- col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 -->
+                                    <div class="row">
                                         <img class="fluidImgOrdina" id="imgOrdine" src="" alt="NO IMAGE">
                                     </div>
-                                    <div class="col-6 d-grid">
+                                    <!-- col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-grid -->
+                                    <div class="row container-fluid h-100 border border-2 border-success rounded rounded-2 mx-auto">
                                         <div class="row d-inline-flex">
                                             <div class="col-auto">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="2em" height="2em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 4C6.486 4 2 8.486 2 14a9.89 9.89 0 0 0 1.051 4.445c.17.34.516.555.895.555h16.107c.379 0 .726-.215.896-.555A9.89 9.89 0 0 0 22 14c0-5.514-4.486-10-10-10zm7.41 13H4.59A7.875 7.875 0 0 1 4 14c0-4.411 3.589-8 8-8s8 3.589 8 8a7.875 7.875 0 0 1-.59 3z" fill="#626262"/><path d="M10.939 12.939a1.53 1.53 0 0 0 0 2.561a1.53 1.53 0 0 0 2.121-.44l3.962-6.038a.034.034 0 0 0 0-.035a.033.033 0 0 0-.045-.01l-6.038 3.962z" fill="#626262"/></svg>

@@ -74,9 +74,23 @@ $(document).ready(function(){
                     $(this).children('span').removeClass('fs-4');
                     $(this).children('span').addClass('fs-2');
                 }
+
+                $('#dinamicDiv').load('../html/' + $(this).attr('id') + '.html');
+            } else {
+                ajaxCards.each(function(){
+                    if($(this).hasClass('activeCard')){
+                        $(this).addClass('normalCard');
+                        $(this).removeClass('activeCard');
+
+                        if($(this).children('span').hasClass('fs-2')){
+                            $(this).children('span').removeClass('fs-2');
+                            $(this).children('span').addClass('fs-4');
+                        }
+                    } 
+                })
+                $('#dinamicDiv').html('');
             }
 
-            $('#dinamicDiv').load('../html/' + $(this).attr('id') + '.html');
         })
     })
 

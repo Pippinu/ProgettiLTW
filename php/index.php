@@ -371,44 +371,47 @@
             <div class="row mx-lg-1 mx-md-1">
                 <div class="col-6 container searchDiv mt-4 px-3 pb-3 pt-3">
                     <form action="../php/rentCatalogPage.php" method="POST" class="needs-validation" id="noleggioForm">
-                        <div class="h2 row mb-2">
-                            <p class="text-center text-dark">Noleggiami! <br> Tutto piu semplice con RentACar.com</p>
+                        <div class="row mb-2">
+                            <p class="text-center text-dark fs-1 fw-bold">Noleggiami! <br> Tutto piu semplice con RentACar.com</p>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input type="text" class="form-control" name="cittaNoleggio" placeholder="Inserisci Citta" id="inputCittaNoleggio">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label class="text-dark text-left text-uppercase mb-3">Periodo Noleggio</label>
-                        </div>
-                        <!-- Riga Input Date -->
-                        <div class="row mb-1">
-                            <div class='col-lg-5 col-md-6 col-sm-6'>
-                                <div class="input-group mb-2">
-                                    <input id="dateStart" type="text" name="dataDa" class="form-control" placeholder="Data inizio noleggio" aria-label="Data inizio noleggio" aria-describedby="basic-addon2">
-                                    <button class="btn btn-secondary btn-success rounded-0 rounded-end input-group-text" type="button" id="calendarIconStart">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
-                                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                                        </svg>
-                                    </button>
+                        <div class="container lightMainDiv border border-3 border-success rounded rounded-2">
+                            <div class="row mb-3">
+                                <label class="text-dark text-left fw-bold mb-1 fs-4">Inserisci Citta</label>
+                                <div class="col mt-1">
+                                    <input type="text" class="form-control" name="cittaNoleggio" placeholder="Inserisci Citta" id="inputCittaNoleggio">
                                 </div>
                             </div>
-                            <div class='col-lg-5 col-md-6 col-sm-6'>
-                                <div class="input-group">
-                                    <input id="dateEnd" type="text" name="dataA" class="form-control date" placeholder="Data fine noleggio" aria-label="Data fine noleggio" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-secondary btn-success rounded-0 rounded-end input-group-text" type="button" id="calendarIconEnd">
+                            <div class="row">
+                                <label class="text-dark text-left fw-bold mb-1 fs-4">Periodo Noleggio</label>
+                            </div>
+                            <!-- Riga Input Date -->
+                            <div class="row mb-1">
+                                <div class='col-lg-5 col-md-6 col-sm-6'>
+                                    <div class="input-group mb-2">
+                                        <input id="dateStart" type="text" name="dataDa" class="form-control" placeholder="Data inizio noleggio" aria-label="Data inizio noleggio" aria-describedby="basic-addon2">
+                                        <button class="btn btn-secondary btn-success rounded-0 rounded-end input-group-text" type="button" id="calendarIconStart">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
                                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                             </svg>
                                         </button>
                                     </div>
                                 </div>
-                                <div id="errorDateDiv" class="text-danger" hidden='true'>Inserire periodo coerente!</div>
-                            </div>
-                            <div class="col-lg-2 col-sm-12 col-md-12 mt-2">
-                                <button id='noleggioSubmitBtn' class="btn btn-success btnToSpread" type="submit" disabled>Cerca</button>
+                                <div class='col-lg-5 col-md-6 col-sm-6'>
+                                    <div class="input-group">
+                                        <input id="dateEnd" type="text" name="dataA" class="form-control date" placeholder="Data fine noleggio" aria-label="Data fine noleggio" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-secondary btn-success rounded-0 rounded-end input-group-text" type="button" id="calendarIconEnd">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="errorDateDiv" class="text-danger" hidden='true'>Inserire periodo coerente!</div>
+                                </div>
+                                <div class="col-lg-2 col-sm-12 col-md-12">
+                                    <button id='noleggioSubmitBtn' class="btn btn-success btnToSpread" type="submit" disabled>Cerca</button>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -416,14 +419,14 @@
             </div>
             <!-- Box 3 Cose AJAX -->
             <div id="ajaxCardsDiv" class="row rowCards text-dark mt-4 px-0 mx-lg-1 mx-md-1 justify-content-lg-center justify-content-md-center">
-                <div id="prezzi" class="col card normalCard activeCard">
-                    <span class="text-center fs-2 normalSpanCard activeSpanCard">Scopri i nostri prezzi!</span>
+                <div id="prezzi" class="col card normalCard">
+                    <span class="text-center fs-2">Scopri i nostri prezzi!</span>
                 </div>
                 <div id="sceglinoi" class="col card normalCard">
-                    <span class="text-center fs-4 normalSpanCard">Perche scegliere noi?</span>
+                    <span class="text-center fs-4 ">Perche scegliere noi?</span>
                 </div>
                 <div id="offerte" class="col card normalCard">
-                    <span class="text-center fs-4 normalSpanCard">Offerte del mese!</span>
+                    <span class="text-center fs-4 ">Offerte del mese!</span>
                 </div>
             </div>
 
