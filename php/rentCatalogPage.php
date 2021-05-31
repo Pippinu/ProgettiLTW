@@ -408,7 +408,7 @@
                 </div>
             </nav>
 
-        <div class="container mt-2 px-0">
+        <div class="container-fluid mt-2 px-0">
             <!-- Row btn Filtra e Ordina -->
             <div class="row d-flex">
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -525,7 +525,7 @@
             </div>
             <!-- Row Cards delle Auto -->
             <div>
-                <div class="row mt-3" id = "rowCard">
+                <div class="row" id = "rowCard">
                     <?php
                         if(pg_num_rows($result) > 0){
                             for($i = 0; $i < pg_num_rows($result); $i++){
@@ -544,20 +544,76 @@
                                 $autoValues = $_SESSION['sessionAuto'][$row[2] . $row[1]];
 
                                 // Aumentare card height ad SM, provare con media-queries
-                                echo '<div id=card'. $autoValues['marchio'] . $autoValues['nome'] .' class="card col-xl-3 col-lg-4 col-md-6 col-sm-12 border-1 border-dark px-0">';
-                                echo    '<img src="../img/imgAuto/'. $autoValues['img'] .'" class="card-img-top mt-1 fluidImg px-1" alt="NO IMAGE">';
-                                echo    '<div class="card-body">';
-                                echo        '<h5 class="card-title">'.'<i class="fas fa-car"></i> ' . $autoValues['marchio'] . ' ' . $autoValues['nome'] .'</h5>';
-                                echo        '<p class="card-text">
-                                                <i class="fas fa-tachometer-alt"></i> Cilindrata: '. $autoValues['cilindrata'].'</br>
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M17 4.5C17 5.9 15.9 7 14.5 7S12 5.9 12 4.5S13.1 2 14.5 2S17 3.1 17 4.5M15 8h-.8c-2.1 0-4.1-1.2-5.1-3.1c-.1-.1-.2-.2-.2-.3l-1.8.8c.5 1.4 2.1 3.2 4.4 4.1l-1.8 5l-3.9-1.1L3 18.9l2 .5l1.8-3.6l4.5 1.2c1 .2 2-.3 2.4-1.2L16 9.4c.2-.7-.3-1.4-1-1.4m3.9-1l-3.4 9.4c-.6 1.6-2.1 2.6-3.7 2.6c-.3 0-.7 0-1-.1l-2.9-.8l-.9 1.8l2 .5l1.4.4c.5.1 1 .2 1.5.2c2.5 0 4.7-1.5 5.6-3.9L21 7h-2.1z" fill="black"/></svg>
-                                                Posti: '. $autoValues['posti'].'</br>
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g class="icon-tabler" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="18" r="2"/><path d="M5 8v8"/><path d="M12 8v8"/><path d="M19 8v2a2 2 0 0 1-2 2H5"/></g></svg>
-                                                Cambio: '. $autoValues['cambio'].'</p>';
-                                echo    '</div>';
-                                echo    '<div class="card-footer text-muted">';
-                                echo        '<button class="btn btn-outline-success" id="btn-'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-bs-toggle="modal" data-bs-target="#autoOrdinaModal" data-autovalue='. json_encode($autoValues) .'>Ordina</button>';
-                                echo    '</div>';
+                                // echo '<div id=card'. $autoValues['marchio'] . $autoValues['nome'] .' class="card col-xl-3 col-lg-4 col-md-6 col-sm-12 border-1 border-dark px-0">';
+                                // echo    '<img src="../img/imgAuto/'. $autoValues['img'] .'" class="card-img-top mt-1 fluidImg px-1" alt="NO IMAGE">';
+                                // echo    '<div class="card-body">';
+                                // echo        '<h5 class="card-title">'.'<i class="fas fa-car"></i> ' . $autoValues['marchio'] . ' ' . $autoValues['nome'] .'</h5>';
+                                // echo        '<p class="card-text">
+                                //                 <i class="fas fa-tachometer-alt"></i> Cilindrata: '. $autoValues['cilindrata'].'</br>
+                                //                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M17 4.5C17 5.9 15.9 7 14.5 7S12 5.9 12 4.5S13.1 2 14.5 2S17 3.1 17 4.5M15 8h-.8c-2.1 0-4.1-1.2-5.1-3.1c-.1-.1-.2-.2-.2-.3l-1.8.8c.5 1.4 2.1 3.2 4.4 4.1l-1.8 5l-3.9-1.1L3 18.9l2 .5l1.8-3.6l4.5 1.2c1 .2 2-.3 2.4-1.2L16 9.4c.2-.7-.3-1.4-1-1.4m3.9-1l-3.4 9.4c-.6 1.6-2.1 2.6-3.7 2.6c-.3 0-.7 0-1-.1l-2.9-.8l-.9 1.8l2 .5l1.4.4c.5.1 1 .2 1.5.2c2.5 0 4.7-1.5 5.6-3.9L21 7h-2.1z" fill="black"/></svg>
+                                //                 Posti: '. $autoValues['posti'].'</br>
+                                //                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g class="icon-tabler" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="18" r="2"/><path d="M5 8v8"/><path d="M12 8v8"/><path d="M19 8v2a2 2 0 0 1-2 2H5"/></g></svg>
+                                //                 Cambio: '. $autoValues['cambio'].'</p>';
+                                // echo    '</div>';
+                                // echo    '<div class="card-footer text-muted">';
+                                // echo        '<button class="btn btn-outline-success" id="btn-'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-bs-toggle="modal" data-bs-target="#autoOrdinaModal" data-autovalue='. json_encode($autoValues) .'>Ordina</button>';
+                                // echo    '</div>';
+                                // echo '</div>';
+
+                                echo '<div id=card'. $autoValues['marchio'] . $autoValues['nome'] .' class="container col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mt-4 mx-0">';
+                                    // Immagine
+                                    echo '<div class="left border border-1 border-dark rounded rounded-3">';
+                                        echo '<img src="../img/imgAuto/'. $autoValues['img'] .'" class="rounded rounded-3 img-fluid mx-auto d-block" px-1" alt="NO IMAGE">';
+                                    echo '</div>';
+                                    // Card
+                                    echo '<div class="card right border border-2 border-success">';
+                                        echo '<div class="card-header inhBg titleText px-1">';
+                                            echo '<div class="row">';
+                                                echo '<div class="col-5"></div>';
+                                                echo '<div class="col-7"><h4 class="card-title">'. $autoValues['marchio'] . ' ' . $autoValues['nome'] .'</h4></div>';
+                                            echo '</div>';
+                                        echo '</div>';
+                                        echo '<div class="card-body pb-1 pt-1">';
+                                            echo '<div class="row w-100 h-100 mx-0">';
+                                                echo '<div class="col-5">';
+                                                echo '</div>';
+                                                echo '<div id="carInfo" class="col-7 pe-0">';
+                                                    echo        '<p class="card-text"><i class="fas fa-tachometer-alt"></i> Cilindrata: '. $autoValues['cilindrata'].'</p>
+                                                                <p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M17 4.5C17 5.9 15.9 7 14.5 7S12 5.9 12 4.5S13.1 2 14.5 2S17 3.1 17 4.5M15 8h-.8c-2.1 0-4.1-1.2-5.1-3.1c-.1-.1-.2-.2-.2-.3l-1.8.8c.5 1.4 2.1 3.2 4.4 4.1l-1.8 5l-3.9-1.1L3 18.9l2 .5l1.8-3.6l4.5 1.2c1 .2 2-.3 2.4-1.2L16 9.4c.2-.7-.3-1.4-1-1.4m3.9-1l-3.4 9.4c-.6 1.6-2.1 2.6-3.7 2.6c-.3 0-.7 0-1-.1l-2.9-.8l-.9 1.8l2 .5l1.4.4c.5.1 1 .2 1.5.2c2.5 0 4.7-1.5 5.6-3.9L21 7h-2.1z" fill="black"/></svg>
+                                                                Posti: '. $autoValues['posti'].'</p>
+                                                                <p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g class="icon-tabler" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="18" r="2"/><path d="M5 8v8"/><path d="M12 8v8"/><path d="M19 8v2a2 2 0 0 1-2 2H5"/></g></svg>
+                                                                Cambio: '. $autoValues['cambio'].'</p>';
+                                                echo '</div>';
+                                            echo '</div>';
+                                        echo '</div>';
+                                        echo '<div class="card-footer inhBg mt-3">';
+                                        echo '<div class="row">';
+                                            echo '<div class="col-7">';
+                                                echo '<table class="table priceTable mb-0">';
+                                                    echo '<tbody>';
+                                                    echo '<tr>';
+                                                        echo '<th scope="row">Prezzo</th>';
+                                                        echo '<td>16.00$</td>';
+                                                    echo '</tr>';
+                                                    echo '<tr>';
+                                                        echo '<th scope="row">JUNE21</th>';
+                                                        echo '<td class="text-danger">-4.00$</td>';
+                                                    echo '</tr>';
+                                                    echo '</tbody>';
+                                                    echo '<tfoot class="border-top ">';
+                                                        echo '<th scope="row">Totale</th>';
+                                                        echo '<td class="text-success">16.00$</td>';
+                                                    echo '</tfoot>';
+                                                echo '</table>';
+                                            echo '</div>';
+                                            echo '<div class="col-5 align-bottom mx-auto d-grid">';
+                                            echo '<button class="btn btn-outline-success">';
+                                                echo 'Ordina';
+                                            echo '</button>';
+                                            echo '</div>';
+                                        echo '</div>';
+                                        echo '</div>';
+                                    echo '</div>';
                                 echo '</div>';
                             }
                         } else {

@@ -114,3 +114,54 @@ div.newsletterDiv {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 10px rgba(13, 110, 253, 1);;
   outline: 0 none;
 }
+
+#rowCard .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#rowCard .left {
+  background-color: white;
+  width: 150px;
+  height: 150px;
+  margin-top: -100px;
+  margin-right: -120px;
+  z-index: 100;
+}
+
+#rowCard .right {
+  width: 18em;
+  height: 100%;
+  z-index: 99;
+}
+
+#rowCard .inhBg {
+  background-color: inherit;
+}
+
+#rowCard .priceTable th, #rowCard .priceTable td{
+  padding: 0;
+  border: none;
+}
+#rowCard .priceTable tr{
+  border: none;
+}
+
+#rowCard img{
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  object-fit: scale-down;
+  object-position: center;
+  margin:0 auto;
+}
+
+#carInfo{
+  font-size: 15px;
+}
+
+#carInfo p{
+  margin-top:10px;
+  margin-bottom:10px;
+}
