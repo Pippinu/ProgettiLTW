@@ -248,16 +248,17 @@ $(document).ready(function(){
         $('#pPostiOrdine').html('<b>Posti:</b> ' + values['posti']);
         $('#pCambioOrdine').html('<b>Cambio:</b> ' + values['cambio']);
 
-        $('#ConfermaPagaBtn').attr('data-autoMarchio', values['marchio']);
-        $('#ConfermaPagaBtn').attr('data-autoNome', values['nome']);
+        $('#pagaBtn').attr('data-autoMarchio', values['marchio']);
+        $('#pagaBtn').attr('data-autoNome', values['nome']);
     })
 
-    $('#ConfermaPagaBtn').click(function(){
-        $('#autoOrdinaModal').modal('hide');
-        $('#creditCardModal').modal('show');
-        $('#pagaBtn').attr('data-autoMarchio', $(this).attr('data-autoMarchio'));
-        $('#pagaBtn').attr('data-autoNome', $(this).attr('data-autoNome'));
-    })
+    // DA ELIMINARE
+    // $('#ConfermaPagaBtn').click(function(){
+    //     $('#autoOrdinaModal').modal('hide');
+    //     $('#creditCardModal').modal('show');
+    //     $('#pagaBtn').attr('data-autoMarchio', $(this).attr('data-autoMarchio'));
+    //     $('#pagaBtn').attr('data-autoNome', $(this).attr('data-autoNome'));
+    // })
 
     $('#pagaBtn').click(function(){
         $marchio = $(this).attr('data-autoMarchio');
@@ -275,8 +276,9 @@ $(document).ready(function(){
             }
         });
         
-        $(this).prop('disabled', true);
-        $(this).html('Attendi...')
+        $(this).prop('hidden', true);
+        $('#pagaSpinner').prop('hidden', false);
+        // $(this).html('Attendi...')
 
         setTimeout(function(){
             window.location.replace('../php/index.php');

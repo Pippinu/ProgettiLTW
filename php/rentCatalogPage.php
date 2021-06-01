@@ -607,9 +607,11 @@
                                                 echo '</table>';
                                             echo '</div>';
                                             echo '<div class="col-5 px-0" style="position: relative;">';
-                                                echo '<button id="btnCard'. $autoValues['marchio'] . $autoValues['nome'] .'" class="btn btn-outline-dark">';
-                                                    echo 'Ordina';
-                                                echo '</button>';
+                                                if(!isset($_SESSION['user'])){
+                                                    echo '<a id="cardMsgErrorLogin" class="text-danger text-center" data-bs-toggle="modal" data-bs-target="#signInModal" href="#">Accedi per continuare</a>';
+                                                } else {
+                                                    echo '<button class="btn btn-outline-success" id="btnCard'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-bs-toggle="modal" data-bs-target="#creditCardModal" data-autovalue='. json_encode($autoValues) .'>Ordina</button>';
+                                                }
                                             echo '</div>';
                                         echo '</div>';
                                         echo '</div>';
@@ -621,8 +623,9 @@
                         }
                     ?>
                 </div>
-                <div class="modal fade" id="autoOrdinaModal" tabindex="-1" aria-hidden="true">
-                    <!-- SISTEMARE CASO SM -->
+                
+                <!-- DA ELIMINARE  -->
+                <!-- <div class="modal fade" id="autoOrdinaModal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-fullscreen-sm-down">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -631,11 +634,11 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container d-grid">
-                                    <!-- col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 -->
+                                    col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12
                                     <div class="row">
                                         <img class="fluidImgOrdina" id="imgOrdine" src="" alt="NO IMAGE">
                                     </div>
-                                    <!-- col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-grid -->
+                                    col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-grid
                                     <div class="row container-fluid h-100 border border-2 border-success rounded rounded-2 mx-auto">
                                         <div class="row d-inline-flex">
                                             <div class="col-auto">
@@ -666,17 +669,16 @@
                             </div>
                             <div class="modal-footer">
                                 <?php 
-                                    if(isset($_SESSION['user'])){
-                                        echo '<button id="ConfermaPagaBtn" class="btn btn-outline-success">Conferma e Paga</button>';
-                                    } else {
-                                        echo '<p class="text-danger">Accedi per prenotare!</p>';
-                                    }
+                                    // if(isset($_SESSION['user'])){
+                                    //     echo '<button id="ConfermaPagaBtn" class="btn btn-outline-success">Conferma e Paga</button>';
+                                    // } else {
+                                    //     echo '<p class="text-danger">Accedi per prenotare!</p>';
+                                    // }
                                 ?>
-                                
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="modal fade" id="creditCardModal" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -727,7 +729,13 @@
                                 </script>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-success" id="pagaBtn" disabled='true'>Paga</button>
+                                <button type="button" class="btn btn-outline-success" id="pagaBtn" disabled='true'>
+                                    Paga
+                                </button>
+                                <button id="pagaSpinner" class="btn btn-outline-success" type="button" disabled hidden="true">
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    Attendi...
+                                </button>
                             </div>
                         </div>
                     </div>

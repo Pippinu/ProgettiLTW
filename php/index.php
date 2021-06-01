@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <!-- Div Profilo e Ordini -->
-                    <div class="row nav-item">
+                    <div class="row nav-item mt-2">
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="collapse multi-collapse" id="collapseProfilo">
                                 <?php 
