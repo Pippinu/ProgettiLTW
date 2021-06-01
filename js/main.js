@@ -284,22 +284,43 @@ $(document).ready(function(){
     });
 
     //Script per far coincidere il font-size del titolo delle card con la grandezza del div 'card-title' nella pagina 'rentCatalogPage.php'
-    // $fontSize = 30;
-    // $titleCards = $('.divTitle');
-    // $titleCards.each(function(){
-    //     $thisChildSpan = $(this).children('.card-title');
-    //     $thisChildSpan.css('font-size', $fontSize);
+    $fontSize = 30;
+    $titleCards = $('.divTitle');
+    $titleCards.each(function(){
+        $thisChildSpan = $(this).children('.card-title');
+        $thisChildSpan.css('font-size', $fontSize);
         
-    //     while($thisChildSpan.width() > $(this).width()){
-    //         $fontSize -= .5;
-    //         $thisChildSpan.css('font-size', $fontSize);
-    //     }
+        while($thisChildSpan.width() > $(this).width()){
+            $fontSize -= .5;
+            $thisChildSpan.css('font-size', $fontSize);
+        }
 
-    //     while($thisChildSpan.width() < $(this).width()){
-    //         $fontSize += .5;
-    //         $thisChildSpan.css('font-size', $fontSize);
-    //     }
-    // })
+        while($thisChildSpan.width() < $(this).width()){
+            $fontSize += .5;
+            $thisChildSpan.css('font-size', $fontSize);
+        }
+    })
+
+    //Script random bg-color delle CarCard nella pagina 'rentCatalogPage.php'
+    $bgColors = ["#0f4c75", "#3282b8", "#bbe1fa"];
+    $cards = $('div[id^="carCard"]');
+    $preColor = null;
+    $cards.each(function(){
+        console.log($(this).attr('id'));
+
+        $randomColor = $bgColors[Math.floor(Math.random() * $bgColors.length)];
+
+        if($preColor != null){
+            while($preColor == $randomColor){
+                $randomColor = $bgColors[Math.floor(Math.random() * $bgColors.length)];
+            }
+        }
+
+        $(this).find('.right').css("border-color", $randomColor);
+        $(this).find('.left').css("border-color", $randomColor);
+
+        $preColor = $randomColor;
+    })
 })
 
 let hideShowPass = el => {

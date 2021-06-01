@@ -79,7 +79,7 @@
         <link href="../css/style.css" rel="stylesheet">
         <script src="../js/main.js"></script>
     </head>
-    <body class="bg-dark">
+    <body >
         <nav class="navbar navbar-dark bg-dark border border-0 border-bottom border-3 border-light">
                 <div class="container-fluid pe-2">
                     <a class="navbar-brand fs-2 logo text-center mx-0 px-0" href="index.php">RentACar.com</a>
@@ -560,17 +560,17 @@
                                 // echo    '</div>';
                                 // echo '</div>';
 
-                                echo '<div id="card'. $autoValues['marchio'] . $autoValues['nome'] .'" class="container col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-4 mx-0">';
+                                echo '<div id="carCard'. $autoValues['marchio'] . $autoValues['nome'] .'" class="container col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-4 mx-0">';
                                     // Immagine
-                                    echo '<div class="left border border-1 border-dark rounded rounded-3">';
+                                    echo '<div class="left rounded rounded-3">';
                                         echo '<img src="../img/imgAuto/'. $autoValues['img'] .'" class="rounded rounded-3 img-fluid mx-auto d-block" px-1" alt="NO IMAGE">';
                                     echo '</div>';
                                     // Card
-                                    echo '<div class="card right border border-2 border-success">';
+                                    echo '<div class="card right bg-light">';
                                         echo '<div class="card-header inhBg titleText">';
                                             echo '<div class="row">';
                                                 echo '<div class="col-5"></div>';
-                                                echo '<div id="stoCazzo" class="divTitle col-7 px-2"><span id="carCardTitleSpan" class="card-title">'. $autoValues['marchio'] . ' ' . $autoValues['nome'] .'</span></div>';
+                                                echo '<div class="divTitle col-7 px-2"><span id="carCardTitleSpan" class="card-title fw-bold">'. $autoValues['marchio'] . ' ' . $autoValues['nome'] .'</span></div>';
                                             echo '</div>';
                                         echo '</div>';
                                         echo '<div class="card-body pb-1 pt-1">';
@@ -586,10 +586,10 @@
                                                 echo '</div>';
                                             echo '</div>';
                                         echo '</div>';
-                                        echo '<div class="card-footer inhBg mt-3">';
+                                        echo '<div class="card-footer inhBg mt-1">';
                                         echo '<div class="row">';
-                                            echo '<div class="col-7">';
-                                                echo '<table class="table priceTable mb-0">';
+                                            echo '<div class="col-7 px-1 bg-light rounded rounded-3 border border-1 border-dark">';
+                                                echo '<table class="table priceTable text-center mb-0">';
                                                     echo '<tbody>';
                                                     echo '<tr>';
                                                         echo '<th scope="row">Prezzo</th>';
@@ -606,10 +606,10 @@
                                                     echo '</tfoot>';
                                                 echo '</table>';
                                             echo '</div>';
-                                            echo '<div class="col-5 align-bottom mx-auto d-grid">';
-                                            echo '<button class="btn btn-outline-success">';
-                                                echo 'Ordina';
-                                            echo '</button>';
+                                            echo '<div class="col-5 px-0" style="position: relative;">';
+                                                echo '<button id="btnCard'. $autoValues['marchio'] . $autoValues['nome'] .'" class="btn btn-outline-dark">';
+                                                    echo 'Ordina';
+                                                echo '</button>';
                                             echo '</div>';
                                         echo '</div>';
                                         echo '</div>';

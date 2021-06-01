@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&family=Odibee+Sans&display=swap");
+body {
+  font-family: 'Mate SC', serif;
+  background-color: #1b262c;
+}
+
 .searchDiv {
   background-image: url("../img/foto2.png");
   background-repeat: no-repeat;
@@ -117,6 +124,8 @@
 
 #rowCard .left {
   background-color: white;
+  border: 3px solid;
+  border-color: none;
   width: 150px;
   height: 150px;
   margin-top: -100px;
@@ -125,6 +134,10 @@
 }
 
 #rowCard .right {
+  background-color: #E84545;
+  border: 5px solid;
+  border-color: #f6e9e9;
+  font-family: 'Mate SC', serif;
   width: 18em;
   height: 100%;
   z-index: 99;
@@ -163,4 +176,15 @@
 
 #carCardTitleSpan {
   white-space: nowrap;
+}
+
+[id^='carInfo'] {
+  white-space: nowrap;
+}
+
+[id^='btnCard'] {
+  width: 95%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
