@@ -1,50 +1,137 @@
+.searchDiv
+  background-image: url("../img/foto2.png")
+  background-repeat: no-repeat
+  background-size: cover
+  margin: auto
 
-logo
-    padding: 0
-    padding-bottom: 3px
-    margin: 0
-    margin-left: 30px
-    margin-right: 30px
+  /* min-width: 500px
+  width: 100%
+  border: 1px white solid
+  border-radius: 5px
 
-nav
-    myNav
-        border-bottom: 1px solid
+.newsletterDiv
+  background-color: inherit
+  min-width: 400px
+  border-radius: 5px
+  padding: 12px
 
-div
-    searchDiv
-        background-color: grey
-        margin: auto
-        /* min-width: 500px */
-        width: 100%
-        border: 1px white solid
-        border-radius: 5px
+.btnToSpread
+  width: 100%
 
-    newsletterDiv
-        background-color: $red
-        min-width: 400px
-        border-radius: 5px
-        padding: 12px    
+.rowCards
+  height: 14em
 
-btnToSpread
+.colSleep
+  background-color: inherit
+
+.normalCard
+  background-color: white
+  border-color: rgba(12, 12, 12, 0.494)
+
+  span
+    color: #292b2c
+    margin: auto
+    border-bottom: 3px #292b2c solid
+
+.activeCard
+  background-color: inherit
+  border-color: white
+
+  span
+    color: darkgoldenrod
+    margin: auto
+    border-bottom: 5px darkgoldenrod solid
+
+.dinamicDiv
+  background-color: inherit
+
+.toBeArrotondato
+  border-radius: 10px
+
+.buttone
+  width: 100%
+  height: 100%
+
+/* XXL
+@media screen and (max-width: 1400px)
+  .fluidImg
     width: 100%
+    height: 60%
 
-rowCards
-    height: 14em
+/* SM
+@media screen and (max-width: 768px)
+  .fluidImg
+    width: 100%
+    height: 70%
 
-colSleep
+.fluidImgOrdina
+  width: 100%
+  height: auto
+
+@media screen and (max-width: 768px)
+  .iconUser
+    width: 100%
+    height: auto
+    display: inline-block
+    vertical-align: middle
+
+.lightMainDiv
+  background-color: rgba(255, 255, 255, 0.686)
+
+#mainDiv input:focus, #signInModal input:focus
+  border-color: rgba(25, 135, 84, 1)
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 10px rgba(25, 135, 84, 1)
+  outline: 0 none
+
+#signUpModal input:focus
+  border-color: rgba(13, 110, 253, 1)
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 10px rgba(13, 110, 253, 1)
+  outline: 0 none
+
+#rowCard
+  .container
+    display: flex
+    align-items: center
+    justify-content: center
+
+  .left
+    background-color: white
+    width: 150px
+    height: 150px
+    margin-top: -100px
+    margin-right: -120px
+    z-index: 100
+
+  .right
+    width: 18em
+    height: 100%
+    z-index: 99
+
+  .inhBg
     background-color: inherit
 
+  .priceTable
+    th, td
+      padding: 0
+      border: none
 
-activeCard
-    background-color: $primary
+    tr
+      border: none
 
+  img
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+    object-fit: scale-down
+    object-position: center
+    margin: 0 auto
 
-centerTextCardSpan
-    font-size: 2em
-    margin: auto
-    border-bottom: 2px white solid
+#carInfo
+  font-size: 15px
 
-activeSpanCard
-    font-size: 2em
-    margin: auto
-    border-bottom: 5px red solid
+  p
+    margin-top: 10px
+    margin-bottom: 10px
+
+#carCardTitleSpan
+  white-space: nowrap

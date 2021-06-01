@@ -38,7 +38,6 @@ $(document).ready(function(){
             hideShowPass($('#inputConfirmPassSignUpModal'));
         }
     });
-
     $('#showHideBtnSignIn').click(function(event) {
         if($('#inputPassSignIn').val().length > 1){
             event.preventDefault();
@@ -51,7 +50,6 @@ $(document).ready(function(){
 
     //Seleziono le 3 card del div ajaxCardsDiv che le contiene
     var ajaxCards = $('#ajaxCardsDiv div');
-
     ajaxCards.each(function(){
         $(this).click(function(){
             if(!$(this).hasClass('activeCard')){
@@ -284,6 +282,24 @@ $(document).ready(function(){
             window.location.replace('../php/index.php');
         }, 2000);
     });
+
+    //Script per far coincidere il font-size del titolo delle card con la grandezza del div 'card-title' nella pagina 'rentCatalogPage.php'
+    // $fontSize = 30;
+    // $titleCards = $('.divTitle');
+    // $titleCards.each(function(){
+    //     $thisChildSpan = $(this).children('.card-title');
+    //     $thisChildSpan.css('font-size', $fontSize);
+        
+    //     while($thisChildSpan.width() > $(this).width()){
+    //         $fontSize -= .5;
+    //         $thisChildSpan.css('font-size', $fontSize);
+    //     }
+
+    //     while($thisChildSpan.width() < $(this).width()){
+    //         $fontSize += .5;
+    //         $thisChildSpan.css('font-size', $fontSize);
+    //     }
+    // })
 })
 
 let hideShowPass = el => {

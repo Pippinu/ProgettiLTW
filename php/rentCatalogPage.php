@@ -408,9 +408,9 @@
                 </div>
             </nav>
 
-        <div class="container-fluid mt-2 px-0">
+        <div class="mt-2 px-0">
             <!-- Row btn Filtra e Ordina -->
-            <div class="row d-flex">
+            <div class="row container d-flex">
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <button id="btnFiltraOrdina" class="btn bg-light rounded-1 buttone" data-bs-toggle="collapse" data-bs-target="#collapseFiltraOrdina" aria-expanded="false" aria-controls="collapseExample">Filtra</button>
                 </div>
@@ -525,7 +525,7 @@
             </div>
             <!-- Row Cards delle Auto -->
             <div>
-                <div class="row" id = "rowCard">
+                <div class="row container-fluid" id = "rowCard">
                     <?php
                         if(pg_num_rows($result) > 0){
                             for($i = 0; $i < pg_num_rows($result); $i++){
@@ -560,17 +560,17 @@
                                 // echo    '</div>';
                                 // echo '</div>';
 
-                                echo '<div id=card'. $autoValues['marchio'] . $autoValues['nome'] .' class="container col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mt-4 mx-0">';
+                                echo '<div id="card'. $autoValues['marchio'] . $autoValues['nome'] .'" class="container col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-4 mx-0">';
                                     // Immagine
                                     echo '<div class="left border border-1 border-dark rounded rounded-3">';
                                         echo '<img src="../img/imgAuto/'. $autoValues['img'] .'" class="rounded rounded-3 img-fluid mx-auto d-block" px-1" alt="NO IMAGE">';
                                     echo '</div>';
                                     // Card
                                     echo '<div class="card right border border-2 border-success">';
-                                        echo '<div class="card-header inhBg titleText px-1">';
+                                        echo '<div class="card-header inhBg titleText">';
                                             echo '<div class="row">';
                                                 echo '<div class="col-5"></div>';
-                                                echo '<div class="col-7"><h4 class="card-title">'. $autoValues['marchio'] . ' ' . $autoValues['nome'] .'</h4></div>';
+                                                echo '<div id="stoCazzo" class="divTitle col-7 px-2"><span id="carCardTitleSpan" class="card-title">'. $autoValues['marchio'] . ' ' . $autoValues['nome'] .'</span></div>';
                                             echo '</div>';
                                         echo '</div>';
                                         echo '<div class="card-body pb-1 pt-1">';
