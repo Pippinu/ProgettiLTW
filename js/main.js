@@ -322,7 +322,15 @@ $(document).ready(function(){
                 }, 500);
                 $currentCard.find('div[id^="colToHide"]').animate({
                     width: '40%',
+
+                }, 500);
+                $currentCard.find('div[id^="carInfo"]').animate({
+                    width: '60%',
     
+                }, 500);
+                $currentCard.find('div[id^="carPadding"]').animate({
+                    width: '40%',
+
                 }, 500);
                 $currentCard.children('.right').animate({
                     width: '18em',
@@ -345,6 +353,14 @@ $(document).ready(function(){
                 }, 500);
                 $currentCard.find('div[id^="colToHide"]').animate({
                     width: '0%',
+                }, 500);
+                $currentCard.find('div[id^="carInfo"]').animate({
+                    width: '100%',
+    
+                }, 500);
+                $currentCard.find('div[id^="carPadding"]').animate({
+                    width: '0%',
+
                 }, 500);
                 $currentCard.children('.right').animate({
                     width: '50%',
