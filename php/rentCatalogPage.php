@@ -569,8 +569,8 @@
                                     echo '<div class="card right bg-light">';
                                         echo '<div class="card-header inhBg titleText">';
                                             echo '<div class="row">';
-                                                echo '<div class="col-5"></div>';
-                                                echo '<div class="divTitle col-7 px-2"><span id="carCardTitleSpan" class="card-title fw-bold">'. $autoValues['marchio'] . ' ' . $autoValues['nome'] .'</span></div>';
+                                                echo '<div id="colToHide'. $autoValues['marchio'] . $autoValues['nome'] .'" ></div>';
+                                                echo '<div id="colToStretch'. $autoValues['marchio'] . $autoValues['nome'] .'" class="divTitle px-3 text-center"><span id="carCardTitleSpan" class="card-title fw-bold">'. $autoValues['marchio'] . ' ' . $autoValues['nome'] .'</span></div>';
                                             echo '</div>';
                                         echo '</div>';
                                         echo '<div class="card-body pb-1 pt-1">';
@@ -592,7 +592,7 @@
                                                 echo '</div>';
                                             echo '</div>';
                                         echo '</div>';
-                                        echo '<div class="card-footer inhBg mt-1">';
+                                        echo '<div class="card-footer inhBg mt-1 d-grid px-1">';
                                             // echo '<div class="row">';
                                             //     echo '<div class="col-7 px-1 bg-light rounded rounded-3 border border-1 border-dark">';
                                             //         echo '<table class="table priceTable text-center mb-0">';
@@ -621,12 +621,20 @@
                                             //         }
                                             //     echo '</div>';
                                             // echo '</div>';
+                                            echo '<div id="priceCar" class="d-inline-flex">';
+                                                // echo '<p class="">Prezzo: </p>';
+                                                // echo '<p class="">16.00$ </p>';
+                                                // echo '<p class=" text-danger">- JUNE21 (10%) </p>';
+                                                // echo '<p class=""> = </p>';
+                                                // echo '<p class=" text-success">14.40$</p>';
 
-                                            echo '<div class="row d-grid">';
-                                                echo '<div class="">'
-                                                
+                                                echo '<p class="card-text text-center"> <b>Prezzo:</b> 16.00$ - <b class="text-danger">JUNE21</b> (10%)</b> = <b class="text-success">14.40$</b>';
 
-                                            echo '</div>'
+                                            echo '</div>';
+                                            echo '<div class="d-flex btn-group mt-2">';
+                                                    echo '<button class="btn btn-outline-success" id="btnCardInfo'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-autovalue='. json_encode($autoValues) .'>Info</button>';
+                                                    echo '<button class="btn btn-outline-success" id="btnCard'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-bs-toggle="modal" data-bs-target="#creditCardModal" data-autovalue='. json_encode($autoValues) .'>Ordina</button>';
+                                            echo '</div>';
                                         echo '</div>';
                                     echo '</div>';
                                 echo '</div>';

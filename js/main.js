@@ -234,22 +234,25 @@ $(document).ready(function(){
         })
     })
 
-    $('#rowCard .btn').click(function(){
-        var values = JSON.parse($(this).attr('data-autovalue'));
-        //Salvo l'oggetto macchina corrente nel array global arrayCars cosi da usarlo in caso di ordine
-        if(arrayCars[values['marchio'] + values['nome']] == null){
-            arrayCars[values['marchio']+values['nome']] = values;
-        }
-
-        console.log($(this).attr('data-autovalue'));
-
-        $('#imgOrdine').attr('src', '../img/imgAuto/' + values['img']);
-        $('#pCilindrataOrdine').html('<b>Cilindrata:</b> ' + values['cilindrata'] + 'cc');
-        $('#pPostiOrdine').html('<b>Posti:</b> ' + values['posti']);
-        $('#pCambioOrdine').html('<b>Cambio:</b> ' + values['cambio']);
-
-        $('#pagaBtn').attr('data-autoMarchio', values['marchio']);
-        $('#pagaBtn').attr('data-autoNome', values['nome']);
+    $btnCards = $('button[id^="btnCardInfo"]');
+    $btnCards.each(function(){
+        $(this).click(function(){
+            var values = JSON.parse($(this).attr('data-autovalue'));
+            //Salvo l'oggetto macchina corrente nel array global arrayCars cosi da usarlo in caso di ordine
+            if(arrayCars[values['marchio'] + values['nome']] == null){
+                arrayCars[values['marchio']+values['nome']] = values;
+            }
+    
+            console.log($(this).attr('data-autovalue'));
+    
+            $('#imgOrdine').attr('src', '../img/imgAuto/' + values['img']);
+            $('#pCilindrataOrdine').html('<b>Cilindrata:</b> ' + values['cilindrata'] + 'cc');
+            $('#pPostiOrdine').html('<b>Posti:</b> ' + values['posti']);
+            $('#pCambioOrdine').html('<b>Cambio:</b> ' + values['cambio']);
+    
+            $('#pagaBtn').attr('data-autoMarchio', values['marchio']);
+            $('#pagaBtn').attr('data-autoNome', values['nome']);
+        })
     })
 
     // DA ELIMINARE
@@ -285,7 +288,7 @@ $(document).ready(function(){
         }, 2000);
     });
 
-    //Script per far coincidere il font-size del titolo delle card con la grandezza del div 'card-title' nella pagina 'rentCatalogPage.php'
+    // Script per far coincidere il font-size del titolo delle card con la grandezza del div 'card-title' nella pagina 'rentCatalogPage.php'
     $fontSize = 30;
     $titleCards = $('.divTitle');
     $titleCards.each(function(){
@@ -305,14 +308,60 @@ $(document).ready(function(){
         // window.setInterval(titleCardSize(), 500);
     })
 
-    $carCards = $('div[id^="carCard"]');
-    $carCards.each(function(){
-        $(this).hover
-
-
-        $(this).on('transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd', function(event) {
+    $btnsInfo = $('button[id^="btnCardInfo"]');
+    $btnsInfo.each(function(){
+        $(this).click(function(){
             
-        });
+            $values = JSON.parse($(this).attr('data-autovalue'));
+            $currentCard = $('#carCard' + $values['marchio'] + $values['nome']);
+
+            if($currentCard.hasClass('infoShowed')){
+                $currentCard.find('div[id^="colToStretch"]').animate({
+                    width: '60%',
+    
+                }, 500);
+                $currentCard.find('div[id^="colToHide"]').animate({
+                    width: '40%',
+    
+                }, 500);
+                $currentCard.children('.right').animate({
+                    width: '18em',
+                    height: '100%',
+                }, 500);
+                $currentCard.children('.left').animate({
+                    width: '150px', 
+                    height: '150px', 
+                    'z-index': '200',
+                    'margin-top': '-100px',
+                    'margin-right': '-120px',
+                }, 500);
+
+                $currentCard.removeClass('infoShowed');
+                
+            } else {
+                $currentCard.find('div[id^="colToStretch"]').animate({
+                    width: '100%',
+    
+                }, 500);
+                $currentCard.find('div[id^="colToHide"]').animate({
+                    width: '0%',
+                }, 500);
+                $currentCard.children('.right').animate({
+                    width: '50%',
+                    height: '100%',
+    
+                }, 500);
+                $currentCard.children('.left').animate({
+                    width: '50%', 
+                    height: '100%', 
+                    'z-index': '100',
+                    'margin-top': '0px',
+                    'margin-right': '0px',
+    
+                }, 500);
+                $currentCard.addClass('infoShowed');
+            }
+        })
     })
 
     //Script random bg-color delle CarCard nella pagina 'rentCatalogPage.php'
@@ -422,20 +471,26 @@ let checkDate = (divToCheck, divCompare) => {
     return check;
 }
 
-let titleCardSize = () => {
-    $titleCards = $('.divTitle');
-    $titleCards.each(function(){
-        $thisChildSpan = $(this).children('.card-title');
-        $fontSize = $thisChildSpan.css('font-size');
-        
-        while($thisChildSpan.width() > $(this).width()){
+let titleCardSize = ($card) => {
+    
+    $titleCard = $card.find($('.divTitle'));
+    $thisChildSpan = $card.find('.card-title');
+    $fontSize = $thisChildSpan.css('font-size');
+
+    console.log('OK');
+
+    if($titleCard && $thisChildSpan && $fontSize){
+        while($thisChildSpan.width() > $titleCard.width()){
+            console.log('OK');
             $fontSize -= .5;
+            
             $thisChildSpan.css('font-size', $fontSize);
         }
-
-        while($thisChildSpan.width() < $(this).width()){
+    
+        while($thisChildSpan.width() < $titleCard.width()){
+            console.log('OK');
             $fontSize += .5;
             $thisChildSpan.css('font-size', $fontSize);
         }
-    })
+    }
 }

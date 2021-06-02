@@ -104,22 +104,21 @@ body
     align-items: center
     justify-content: center
 
-    &:hover
+    // &:hover
 
-      .left
-        width: 50%
-        height: 100%
-        z-index: 100
-        margin-top: 0px
-        margin-right: 0px
+    //   .left
+    //     width: 50%
+    //     height: 100%
+    //     z-index: 100
+    //     margin-top: 0px
+    //     margin-right: 0px
 
-        transition: all 1s ease-in-out
+    //  
 
-      .right
-        width: 50%
-        height: max-content
-        transition: all 1s ease-in-out
-
+    //   .right
+    //     width: 50%
+    //     height: max-content
+    //  
 
   .left
     background-color: white
@@ -131,7 +130,6 @@ body
     margin-right: -120px
     z-index: 200
 
-    transition: all 1s ease-in-out
 
 
   .right
@@ -140,7 +138,6 @@ body
     height: 100%
     z-index: 100
 
-    transition: all 1s ease-in-out
 
 
   .inhBg
@@ -176,13 +173,24 @@ body
     white-space: nowrap
 
 [id^='btnCard']
-  width: 95%
-  position: absolute
-  right:    0
-  bottom:   0
+  font-size: 14px
+  width: 100%
 
 #cardMsgErrorLogin
   width: 100%
   position: absolute
 
-    
+#priceCar
+  p
+    margin: 0
+    padding: 0
+    white-space: normal
+
+#carCardTitleSpan
+  font-size: 1.5em
+
+[id^='colToHide']
+  width: 40%
+
+[id^='colToStretch']
+  width: 60%
