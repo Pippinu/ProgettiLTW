@@ -301,6 +301,18 @@ $(document).ready(function(){
             $fontSize += .5;
             $thisChildSpan.css('font-size', $fontSize);
         }
+
+        // window.setInterval(titleCardSize(), 500);
+    })
+
+    $carCards = $('div[id^="carCard"]');
+    $carCards.each(function(){
+        $(this).hover
+
+
+        $(this).on('transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd', function(event) {
+            
+        });
     })
 
     //Script random bg-color delle CarCard nella pagina 'rentCatalogPage.php'
@@ -410,6 +422,20 @@ let checkDate = (divToCheck, divCompare) => {
     return check;
 }
 
-let checkCreditcard = () => {
+let titleCardSize = () => {
+    $titleCards = $('.divTitle');
+    $titleCards.each(function(){
+        $thisChildSpan = $(this).children('.card-title');
+        $fontSize = $thisChildSpan.css('font-size');
+        
+        while($thisChildSpan.width() > $(this).width()){
+            $fontSize -= .5;
+            $thisChildSpan.css('font-size', $fontSize);
+        }
 
+        while($thisChildSpan.width() < $(this).width()){
+            $fontSize += .5;
+            $thisChildSpan.css('font-size', $fontSize);
+        }
+    })
 }

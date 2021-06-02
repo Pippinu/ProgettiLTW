@@ -560,7 +560,7 @@
                                 // echo    '</div>';
                                 // echo '</div>';
 
-                                echo '<div id="carCard'. $autoValues['marchio'] . $autoValues['nome'] .'" class="container col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-4 mx-0">';
+                                echo '<div id="carCard'. $autoValues['marchio'] . $autoValues['nome'] .'" class="container col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-4 mx-0">';
                                     // Immagine
                                     echo '<div class="left rounded rounded-3">';
                                         echo '<img src="../img/imgAuto/'. $autoValues['img'] .'" class="rounded rounded-3 img-fluid mx-auto d-block" px-1" alt="NO IMAGE">';
@@ -575,6 +575,12 @@
                                         echo '</div>';
                                         echo '<div class="card-body pb-1 pt-1">';
                                             echo '<div class="row w-100 h-100 mx-0">';
+                                                // <div id="carInfoCollapse" class="collapse col-12">
+                                                //     <p class="card-text">
+                                                //         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                //         Lorem Ipsum has been the industry"'"s standard dummy text ever since the 1500s,
+                                                //         when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                                // </div>
                                                 echo '<div class="col-5">';
                                                 echo '</div>';
                                                 echo '<div id="carInfo" class="col-7 pe-0">';
@@ -587,33 +593,40 @@
                                             echo '</div>';
                                         echo '</div>';
                                         echo '<div class="card-footer inhBg mt-1">';
-                                        echo '<div class="row">';
-                                            echo '<div class="col-7 px-1 bg-light rounded rounded-3 border border-1 border-dark">';
-                                                echo '<table class="table priceTable text-center mb-0">';
-                                                    echo '<tbody>';
-                                                    echo '<tr>';
-                                                        echo '<th scope="row">Prezzo</th>';
-                                                        echo '<td>16.00$</td>';
-                                                    echo '</tr>';
-                                                    echo '<tr>';
-                                                        echo '<th scope="row">JUNE21</th>';
-                                                        echo '<td class="text-danger">-4.00$</td>';
-                                                    echo '</tr>';
-                                                    echo '</tbody>';
-                                                    echo '<tfoot class="border-top ">';
-                                                        echo '<th scope="row">Totale</th>';
-                                                        echo '<td class="text-success">16.00$</td>';
-                                                    echo '</tfoot>';
-                                                echo '</table>';
-                                            echo '</div>';
-                                            echo '<div class="col-5 px-0" style="position: relative;">';
-                                                if(!isset($_SESSION['user'])){
-                                                    echo '<a id="cardMsgErrorLogin" class="text-danger text-center" data-bs-toggle="modal" data-bs-target="#signInModal" href="#">Accedi per continuare</a>';
-                                                } else {
-                                                    echo '<button class="btn btn-outline-success" id="btnCard'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-bs-toggle="modal" data-bs-target="#creditCardModal" data-autovalue='. json_encode($autoValues) .'>Ordina</button>';
-                                                }
-                                            echo '</div>';
-                                        echo '</div>';
+                                            // echo '<div class="row">';
+                                            //     echo '<div class="col-7 px-1 bg-light rounded rounded-3 border border-1 border-dark">';
+                                            //         echo '<table class="table priceTable text-center mb-0">';
+                                            //             echo '<tbody>';
+                                            //             echo '<tr>';
+                                            //                 echo '<th scope="row">Prezzo</th>';
+                                            //                 echo '<td>16.00$</td>';
+                                            //             echo '</tr>';
+                                            //             echo '<tr>';
+                                            //                 echo '<th scope="row">JUNE21</th>';
+                                            //                 echo '<td class="text-danger">-4.00$</td>';
+                                            //             echo '</tr>';
+                                            //             echo '</tbody>';
+                                            //             echo '<tfoot class="border-top ">';
+                                            //                 echo '<th scope="row">Totale</th>';
+                                            //                 echo '<td class="text-success">16.00$</td>';
+                                            //             echo '</tfoot>';
+                                            //         echo '</table>';
+                                            //     echo '</div>';
+                                            //     echo '<div class="col-5 btn-group-vertical" role="group">';
+                                            //         if(!isset($_SESSION['user'])){
+                                            //             echo '<a id="cardMsgErrorLogin" class="text-danger text-center" data-bs-toggle="modal" data-bs-target="#signInModal" href="#">Accedi per continuare</a>';
+                                            //         } else {
+                                            //             echo '<button class="btn btn-outline-success" id="btnCardAltro">Altro</button>';
+                                            //             echo '<button class="btn btn-outline-success" id="btnCard'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-bs-toggle="modal" data-bs-target="#creditCardModal" data-autovalue='. json_encode($autoValues) .'>Ordina</button>';
+                                            //         }
+                                            //     echo '</div>';
+                                            // echo '</div>';
+
+                                            echo '<div class="row d-grid">';
+                                                echo '<div class="">'
+                                                
+
+                                            echo '</div>'
                                         echo '</div>';
                                     echo '</div>';
                                 echo '</div>';

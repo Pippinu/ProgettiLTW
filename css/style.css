@@ -122,6 +122,21 @@ body {
   justify-content: center;
 }
 
+#rowCard .container:hover .left {
+  width: 50%;
+  height: 100%;
+  z-index: 100;
+  margin-top: 0px;
+  margin-right: 0px;
+  transition: all 1s ease-in-out;
+}
+
+#rowCard .container:hover .right {
+  width: 50%;
+  height: max-content;
+  transition: all 1s ease-in-out;
+}
+
 #rowCard .left {
   background-color: white;
   border: 3px solid;
@@ -130,17 +145,16 @@ body {
   height: 150px;
   margin-top: -100px;
   margin-right: -120px;
-  z-index: 100;
+  z-index: 200;
+  transition: all 1s ease-in-out;
 }
 
 #rowCard .right {
-  background-color: #E84545;
-  border: 5px solid;
-  border-color: #f6e9e9;
-  font-family: 'Mate SC', serif;
+  border: 3px solid;
   width: 18em;
   height: 100%;
-  z-index: 99;
+  z-index: 100;
+  transition: all 1s ease-in-out;
 }
 
 #rowCard .inhBg {
@@ -182,12 +196,12 @@ body {
   white-space: nowrap;
 }
 
-[id^='btnCard'] {
+/* [id^='btnCard'] {
   width: 95%;
   position: absolute;
   right: 0;
   bottom: 0;
-}
+} */
 
 #cardMsgErrorLogin {
   width: 100%;
