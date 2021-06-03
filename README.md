@@ -15,4 +15,6 @@ Progetto per Linguaggi e tecnologie per il web
 * css: il file è stato creato con il compilatore sass(preprocessore di css)
 
 Nel seguente progetto sono stati utilizzati: Html, Javascript, CSS, Bootstrap, JQuery, Ajax, PHP, Json
+
+
 (Ogni file al suo interno contiene piccoli commenti relativi alle varie funzioni presenti)
