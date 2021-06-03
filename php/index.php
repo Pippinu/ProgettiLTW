@@ -177,6 +177,7 @@
                     </div>
                 </div>
 
+                
                 <?php
                     if(isset($_SESSION['orderOK']) || isset($_SESSION['orderError'])){
                         echo "<script>
@@ -305,7 +306,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer mt-1">
-                                    <button id="SignUpSubmit" type="submit" class="btn btn-outline-primary" name="reg_user" onsubmit="if(checkSubmitSignUp())">Invio</button>
+                                    <button id="SignUpSubmit" type="submit" class="btn btn-outline-primary" name="reg_user" disabled="true">Invio</button>
                                 </div>
                             </form>
                         </div>
@@ -356,7 +357,7 @@
                                     </div>-->
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-outline-success" id="submitBtn" name='login_user' onsubmit="checkSubmitSignUp()">Login</button>
+                                    <button type="submit" class="btn btn-outline-success" id="submitBtn" name='login_user' disabled="true">Login</button>
                                 </div>
                             </form>
                         </div>

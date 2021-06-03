@@ -10,7 +10,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
-  /* min-width: 500px */
   width: 100%;
   border: 1px white solid;
   border-radius: 5px;
@@ -29,10 +28,6 @@ body {
 
 .rowCards {
   height: 14em;
-}
-
-.colSleep {
-  background-color: inherit;
 }
 
 .normalCard {
@@ -59,10 +54,6 @@ body {
 
 .dinamicDiv {
   background-color: inherit;
-}
-
-.toBeArrotondato {
-  border-radius: 10px;
 }
 
 .buttone {
@@ -217,7 +208,7 @@ body {
 }
 
 [id^='carInfo'] p {
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 0;
   padding: 0;
 }

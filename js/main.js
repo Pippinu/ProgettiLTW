@@ -7,17 +7,17 @@ $(document).ready(function(){
     $('#dateEnd').datepicker();
     $('#inputNascita').datepicker();
 
-    //Implementazione dei Btn degli input con datepicker
+    //Btn che mostrano il calendario su 'Inizio Noleggio', 'Fine Noleggio' e 'Data di Nascita'
     $('#calendarIconStart').click(function(){
         $('#dateStart').focus();
     });
     $('#calendarIconEnd').click(function(){
         $("#dateEnd").focus();
     });
-
     $('#signUpNascitaBtn').click(function(){
         $('#inputNascita').focus();
     })
+
     //Campo pass SignUP
     $('#showHideBtnSignUp').click(function(event) {
         if($('#inputPassSignUpModal').val().length > 1){
@@ -112,7 +112,7 @@ $(document).ready(function(){
     InputToCheckSignUp.each(function(){
         if($(this).attr('id') !== 'inputConfirmPassSignUpModal'){
             $(this).change(function(){
-                console.log($(this).val() + ' ' + $(this).attr('id'));
+                // console.log($(this).val() + ' ' + $(this).attr('id'));
                 if($(this).val().length > 0){
                     if($(this).hasClass('is-invalid')){
                         $(this).removeClass('is-invalid');
@@ -141,6 +141,8 @@ $(document).ready(function(){
                 }
             })
         }
+
+        invalidButton('#SignUpSubmit', InputToCheckSignUp, true);
     })
 
     //SignIn Validation
@@ -160,6 +162,8 @@ $(document).ready(function(){
                 $(this).addClass('is-invalid');
             }
         })
+
+        invalidButton('#submitBtn', InputToCheckSignIn, true);
     })
 
     //Form Noleggio Validation
@@ -288,7 +292,7 @@ $(document).ready(function(){
         }, 2000);
     });
 
-    // Script per far coincidere il font-size del titolo delle card con la grandezza del div 'card-title' nella pagina 'rentCatalogPage.php'
+    // Script per far coincidere il font-size del titolo delle carCard con la grandezza del div 'card-title' nella pagina 'rentCatalogPage.php'
     $fontSize = 30;
     $titleCards = $('.divTitle');
     $titleCards.each(function(){
@@ -402,6 +406,7 @@ $(document).ready(function(){
     })
 })
 
+//Script per mostrare/nascondere pass negli input di tipo 'password'
 let hideShowPass = el => {
     if (el.attr("type") == "password") {
         el.attr("type", "text");
@@ -409,6 +414,7 @@ let hideShowPass = el => {
         el.attr("type", "password");
     }
 }
+//Assegna all'input ed al rispettivo btn la capacita di mostrare e gestire calendario datepicker
 let dateInput = el =>{
 
     btn = $(el).children('btn');
@@ -418,30 +424,35 @@ let dateInput = el =>{
         $(el).focus();
     })
 }
-//Controllo che tutti i campi del form SignIn siano validi
-let checkSubmitSignIn = () => {
-    var InputToCheckSignIn = $('#SignInForm input');
-    var check = true;
+//Controllo che tutti i campi del form SignIn siano validi, sostituito dalla funzione invalidButton chiamata sugli elementi del Modal di SignIn
 
-    InputToCheckSignIn.each(function(){
-        if($(this).hasClass('is-invalid') || !$(this).hasClass('is-valid')){
-            check = false;
-        }
-    })
-    return check;
-}
-//Controllo che tutti i campi del form SignUp siano validi
-let checkSubmitSignUp = () => {
-    var InputToCheckSignUp = $('#SignUpForm input');
-    var check = true;
+// let checkSubmitSignIn = () => {
+//     var InputToCheckSignIn = $('#SignInForm input');
+//     var check = true;
 
-    InputToCheckSignUp.each(function(){
-        if($(this).hasClass('is-invalid') || !$(this).hasClass('is-valid')){
-            check = false;
-        }
-    })
-    return check;
-}
+//     InputToCheckSignIn.each(function(){
+//         if($(this).hasClass('is-invalid') || !$(this).hasClass('is-valid')){
+//             check = false;
+//         }
+//     })
+//     return check;
+// }
+
+//Controllo che tutti i campi del form SignUp siano validi, sostituito dalla funzione invalidButton chiamata sugli elementi del Modal di SignUp
+
+// let checkSubmitSignUp = () => {
+//     var InputToCheckSignUp = $('#SignUpForm input');
+//     var check = true;
+
+//     InputToCheckSignUp.each(function(){
+//         if($(this).hasClass('is-invalid') || !$(this).hasClass('is-valid')){
+//             check = false;
+//         }
+//     })
+    
+//     return check;
+// }
+
 //Disabilita il Btn cerca fin quando tutti gli input (Citta, DataInizioNoleggio, DataFineNoleggio) non sono validi, cioe con length > 0
 let invalidButton = (el, InputToCheck, check) => {
 
@@ -460,6 +471,7 @@ let invalidButton = (el, InputToCheck, check) => {
     }
 }
 
+//Script controllo date coerenti
 let checkDate = (divToCheck, divCompare) => {
     var dCheck = new Date(divToCheck.val());
     var dCompare = new Date(divCompare.val());
