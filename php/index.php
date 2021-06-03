@@ -348,12 +348,6 @@
                                         </button>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                                            <label class="form-check-label" for="gridCheck">Remember me</label>
-                                        </div>
-                                    </div>-->
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-outline-success" id="submitBtn" name='login_user' onsubmit="checkSubmitSignUp()">Login</button>
@@ -417,7 +411,7 @@
                     </form>
                 </div>
             </div>
-            <!-- Box 3 Cose AJAX -->
+            <!-- Box con AJAX -->
             <div id="ajaxCardsDiv" class="row rowCards text-dark mt-4 px-0 mx-lg-1 mx-md-1 justify-content-lg-center justify-content-md-center">
                 <div id="prezzi" class="col card normalCard">
                     <span class="text-center fs-4">Scopri i nostri prezzi!</span>
