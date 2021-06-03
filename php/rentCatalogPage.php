@@ -828,7 +828,7 @@
     }
 
     //Stampa la var $_SESSION (debug purpose)
-    echo '<pre class="text-light">';
-    var_dump($_SESSION);
-    echo '</pre>';
+    // echo '<pre class="text-light">';
+    // var_dump($_SESSION);
+    // echo '</pre>';
 ?>

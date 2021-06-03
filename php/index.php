@@ -428,12 +428,53 @@
         </div>
         
         <!-- Newsletter Div -->
-        <div class="col col-sm container border border-success mt-4 ms-auto me-auto newsletterDiv text-center">
+        <!-- <div class="col col-sm container border border-success mt-4 ms-auto me-auto newsletterDiv text-center">
             <h2 class="mb-4 textbreak text-light">Rimani Aggiornato!</h1>
             <label for="inputNewsletter " class="textbreaak fw-light text-light">Inserisci la tua mail per iscriverti alla newsletter di RentACar.com!</p>
             <div class="input-group" id="inputNewsletter">
                 <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span class="input-group-text" id="basic-addon2">@studenti.uniroma1.it</span>
+            </div>
+        </div> -->
+
+        <hr id="divider" class="bg-success">
+
+        <div class="container text-dark mt-4" id="profileBox">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-center card-box">
+                        <div class="member-card pt-2 pb-2">
+                            <div class="thumb-lg member-thumb mx-auto"><img src="../img/baldManIcon.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                            <div class="">
+                                <h4>Alessio Iacono</h4>
+                                <h4 class='text-muted'>1870276</h4>
+                                <p class="text-muted">@Founder <span>| </span><span><a href="#" class="text-pink">RentACar.com</a></span></p>
+                            </div>
+                            <ul class="social-links list-inline">
+                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="https://www.facebook.com/alessio.iacono.73" data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="https://www.instagram.com/alessioiacono99/" data-original-title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="https://github.com/Pippinu" data-original-title="GitHub"><i class="fab fa-github"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center card-box">
+                        <div class="member-card pt-2 pb-2">
+                            <div class="thumb-lg member-thumb mx-auto"><img src="../img/womanIcon.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                            <div class="">
+                                <h4>Uendi Vocaj</h4> 
+                                <h4 class='text-muted'>1856933</h4>
+                                <p class="text-muted">@Founder <span>| </span><span><a href="#" class="text-pink">RentACar.com</a></span></p>
+                            </div>
+                            <ul class="social-links list-inline">
+                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="https://www.facebook.com/uendi.vocaj" data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="https://www.instagram.com/uendi.vocaj/" data-original-title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="https://github.com/uendi-123" data-original-title="GitHub"><i class="fab fa-github"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
