@@ -267,8 +267,8 @@ $(document).ready(function(){
     // })
 
     $('#pagaBtn').click(function(){
-        $marchio = $autoValues['marchio'];
-        $nome = $autoValues['nome'];
+        $marchio = $(this).attr('data-autoMarchio');
+        $nome = $(this).attr('data-autoNome');
 
         $.ajax({
             type: 'POST',

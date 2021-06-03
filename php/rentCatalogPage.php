@@ -56,9 +56,9 @@
     $_SESSION['currentPage'] = 'rentCatalogPage.php';
 
     //Stampa la var $_SESSION (debug purpose)
-    echo '<pre>';
-    var_dump($_SESSION);
-    echo '</pre>';
+    // echo '<pre>';
+    // var_dump($_SESSION);
+    // echo '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +85,7 @@
         <script src="../js/main.js"></script>
     </head>
     <body>
-    <nav class="navbar navbar-dark bg-dark border border-0 border-bottom border-3 border-light">
+        <nav class="navbar navbar-dark bg-dark border border-0 border-bottom border-3 border-light">
             <div class="container-fluid pe-2">
                 <a class="navbar-brand fs-2 logo text-center mx-0 px-0" href="index.php">RentACar.com</a>
                 
@@ -778,4 +778,9 @@
         echo '<script>alert("'.$msg.'");</script>';
         session_start(); 
     }
+
+    //Stampa la var $_SESSION (debug purpose)
+    echo '<pre class="text-light">';
+    var_dump($_SESSION);
+    echo '</pre>';
 ?>
