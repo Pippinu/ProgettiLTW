@@ -124,6 +124,8 @@ $(document).ready(function(){
                     }
                     $(this).addClass('is-invalid');
                 }
+
+                invalidButton('#SignUpSubmit', InputToCheckSignUp, true);
             })
         } else {
             //Check Pass e Conferma Pass
@@ -139,10 +141,9 @@ $(document).ready(function(){
                     }
                     $(this).addClass('is-invalid');
                 }
+                invalidButton('#SignUpSubmit', InputToCheckSignUp, true);
             })
         }
-
-        invalidButton('#SignUpSubmit', InputToCheckSignUp, true);
     })
 
     //SignIn Validation
@@ -161,9 +162,8 @@ $(document).ready(function(){
                 }
                 $(this).addClass('is-invalid');
             }
+            invalidButton('#submitBtn', InputToCheckSignIn, true);
         })
-
-        invalidButton('#submitBtn', InputToCheckSignIn, true);
     })
 
     //Form Noleggio Validation
@@ -233,7 +233,6 @@ $(document).ready(function(){
                     $(this).addClass('is-invalid');
                 }
             }
-
             invalidButton('#pagaBtn', InputToCheckCreditCard, true);
         })
     })
@@ -268,8 +267,8 @@ $(document).ready(function(){
     // })
 
     $('#pagaBtn').click(function(){
-        $marchio = $(this).attr('data-autoMarchio');
-        $nome = $(this).attr('data-autoNome');
+        $marchio = $autoValues['marchio'];
+        $nome = $autoValues['nome'];
 
         $.ajax({
             type: 'POST',
@@ -464,6 +463,7 @@ let invalidButton = (el, InputToCheck, check) => {
         }
     })
 
+    console.log($(el).attr('id') + ' disable? -> ' + $(el).is('[disable]') + ' check -> ' + check);
     if($(el).is('[disabled]') && check == true){
         $(el).prop('disabled', false);
     } else if(!$(el).is('[disabled]') && check == false){

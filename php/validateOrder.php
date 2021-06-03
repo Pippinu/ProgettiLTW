@@ -24,7 +24,7 @@
     } else {
         // Dovrei mettere un msg di errore
         $_SESSION["orderError"] = "Qualcosa e' andato storto, ordine non inserito! " . 
-json_encode($_SESSION["sessionAuto"][$marchioNome]) . "marchio: " . $marchio . " nome: " . $nome;
+        json_encode($_SESSION["sessionAuto"][$marchioNome]) . "marchio: " . $marchio . " nome: " . $nome;
     }
     pg_close($db);
     session_write_close();

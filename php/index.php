@@ -177,7 +177,6 @@
                     </div>
                 </div>
 
-                
                 <?php
                     if(isset($_SESSION['orderOK']) || isset($_SESSION['orderError'])){
                         echo "<script>
