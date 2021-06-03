@@ -6,7 +6,7 @@ Progetto per Linguaggi e tecnologie per il web
 * img: file contente immagini utilizzate nella pagina iniziale e nell'icona utilizzata nel button "Il mio profilo". File contenente anche immagini relative alle auto utilizzate
 * main.js: file contenente tutti gli script del progetto, ognuno dei quali viene commentato all'interno del file stesso
 * index.php: il file ha lo scopo di far visualizzare la pagina iniziale del progetto. (Per maggiori informazioni consultare i commenti presenti nel file)
-* logout.php: file che distrugge la variabile $_STATION 
+* logout.php: file che distrugge la variabile $_SESSION
 * rentCatalogPage.php: file che mostra il catalogo dei veicoli disponibili 
 * signIn.php: file per accedere   
 * signUp.php: file per registrarsi
