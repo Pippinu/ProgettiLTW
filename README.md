@@ -12,4 +12,5 @@ Progetto per Linguaggi e tecnologie per il web
 * signUp.php: file per registrarsi
 * validateOrder.php: file per controllare che i dati inseriti siano corretti e mandare l'informazione al database
 * card-master: cartella contenente file per implementare la carta di credito presente nella selezione "Paga".
+
 Nel seguente progetto sono stati utilizzati: Html, Javascript, CSS, Bootstrap, JQuery, Ajax, PHP, Json
