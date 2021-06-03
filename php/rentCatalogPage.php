@@ -10,8 +10,8 @@
         $_SESSION['sessionAuto'] = array();
     }
 
-    $query =   "SELECT id, nome, marchio, cilindrata, posti, cambio, datada, dataa
-                FROM auto a, (SELECT carid, datada, dataa
+    $query =   "SELECT id, nome, marchio, cilindrata, posti, cambio, datada, dataa, prezzo
+                FROM auto a, (SELECT carid, datada, dataa, prezzo
                                 FROM cittaauto
                                 WHERE nome = '" . $_SESSION['cittaNoleggio'] . "' AND datada <= '". $_SESSION['dataDa']."' AND dataa >= '". $_SESSION['dataA'] ."' ) t
             WHERE a.id = t.carid ";
@@ -52,6 +52,7 @@
     }
     
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+
     //Salvo sulla session la pagina corrente cosi da poterci tornare in caso di login da tale pagina
     $_SESSION['currentPage'] = 'rentCatalogPage.php';
 
@@ -524,7 +525,7 @@
             </div>
             <!-- Row Cards delle Auto -->
             <div>
-                <div class="row container-fluid" id = "rowCard">
+                <div class="row container-fluid px-0 mx-0" id = "rowCard">
                     <?php
                         if(pg_num_rows($result) > 0){
                             for($i = 0; $i < pg_num_rows($result); $i++){
@@ -538,10 +539,13 @@
                                     'cilindrata' => $row[3],
                                     'posti' => $row[4],
                                     'cambio' => $row[5],
+                                    'datada' => $_SESSION['dataDa'],
+                                    'dataa' => $_SESSION['dataA'],
+                                    'prezzo' => $row[8]
                                 );
 
                                 $autoValues = $_SESSION['sessionAuto'][$row[2] . $row[1]];
-
+                                
                                 // Aumentare card height ad SM, provare con media-queries
                                 // echo '<div id=card'. $autoValues['marchio'] . $autoValues['nome'] .' class="card col-xl-3 col-lg-4 col-md-6 col-sm-12 border-1 border-dark px-0">';
                                 // echo    '<img src="../img/imgAuto/'. $autoValues['img'] .'" class="card-img-top mt-1 fluidImg px-1" alt="NO IMAGE">';
@@ -576,7 +580,7 @@
 
                                             echo '<div class="row">';
                                                 echo '<div id="carPadding'. $autoValues['marchio'] . $autoValues['nome'] .'"></div>';
-                                                echo '<div id="carInfo'. $autoValues['marchio'] . $autoValues['nome'] .'"" class="pe-0">';
+                                                echo '<div id="carInfo'. $autoValues['marchio'] . $autoValues['nome'] .'"" class="text-center pe-0">';
                                                     echo        '<p class="card-text"><i class="fas fa-tachometer-alt"></i> Cilindrata: '. $autoValues['cilindrata'].'</p>
                                                                 <p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M17 4.5C17 5.9 15.9 7 14.5 7S12 5.9 12 4.5S13.1 2 14.5 2S17 3.1 17 4.5M15 8h-.8c-2.1 0-4.1-1.2-5.1-3.1c-.1-.1-.2-.2-.2-.3l-1.8.8c.5 1.4 2.1 3.2 4.4 4.1l-1.8 5l-3.9-1.1L3 18.9l2 .5l1.8-3.6l4.5 1.2c1 .2 2-.3 2.4-1.2L16 9.4c.2-.7-.3-1.4-1-1.4m3.9-1l-3.4 9.4c-.6 1.6-2.1 2.6-3.7 2.6c-.3 0-.7 0-1-.1l-2.9-.8l-.9 1.8l2 .5l1.4.4c.5.1 1 .2 1.5.2c2.5 0 4.7-1.5 5.6-3.9L21 7h-2.1z" fill="black"/></svg>
                                                                 Posti: '. $autoValues['posti'].'</p>
@@ -626,18 +630,25 @@
                                             //         }
                                             //     echo '</div>';
                                             // echo '</div>';
-                                            echo '<div id="priceCar" class="d-inline-flex">';
+                                            echo '<div id="priceCar" class="d-inline-flex text-center">';
                                                 // echo '<p class="">Prezzo: </p>';
                                                 // echo '<p class="">16.00$ </p>';
                                                 // echo '<p class=" text-danger">- JUNE21 (10%) </p>';
                                                 // echo '<p class=""> = </p>';
                                                 // echo '<p class=" text-success">14.40$</p>';
 
-                                                echo '<p class="card-text text-center"> <b>Prezzo:</b> 16.00$ - <b class="text-danger">JUNE21</b> (10%)</b> = <b class="text-success">14.40$</b>';
+                                                $dataDa = strtotime($autoValues['datada']);
+                                                $dataA = strtotime($autoValues['dataa']);
+
+                                                $datediff = ($dataA - $dataDa) / 86400;
+                                                $diffGiorni = round($datediff);
+                                                $multi = multiplyBrand($autoValues);
+
+                                                echo '<p class="card-text text-center"> <b>Prezzo:</b> ' . $autoValues['prezzo'] * $multi . '$ - <b class="text-danger">JUNE21</b> (10%)</b> = <b class="text-success">'. $diffGiorni * ($autoValues['prezzo'] - ($autoValues['prezzo']/10)) * $multi . '$</b>';
 
                                             echo '</div>';
                                             echo '<div class="d-flex btn-group mt-2">';
-                                                    echo '<button class="btn btn-outline-success" id="btnCardInfo'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-autovalue='. json_encode($autoValues) .' data-bs-toggle="collapse" href="#carInfoCollapse">Info</button>';
+                                                    echo '<button class="btn btn-outline-success" id="carInfo'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-autovalue='. json_encode($autoValues) .' data-bs-toggle="collapse" href="#carInfoCollapse">Ingrandisci</button>';
                                                     echo '<button class="btn btn-outline-success" id="btnCard'.$autoValues['marchio'].'-'.$autoValues['nome'].'" data-bs-toggle="modal" data-bs-target="#creditCardModal" data-autovalue='. json_encode($autoValues) .'>Ordina</button>';
                                             echo '</div>';
                                         echo '</div>';
@@ -777,6 +788,43 @@
         session_destroy();
         echo '<script>alert("'.$msg.'");</script>';
         session_start(); 
+    }
+
+    function multiplyBrand($auto){
+        $brand = $auto['marchio'];
+        $multi = 0;
+
+        if($brand == 'Fiat'){
+            $multi = 1.3;
+        } else if($brand == 'Ford'){
+            $multi = 1.4;
+        } else if($brand == 'Citroen'){
+            $multi = 1.2;
+        } else if($brand == 'Jeep'){
+            $multi = 1.6;
+        } else if($brand == 'Kia'){
+            $multi = 1.3;
+        } else if($brand == 'Lancia'){
+            $multi = 1.3;
+        } else if($brand == 'Maserati'){
+            $multi = 2;
+        } else if($brand == 'Opel'){
+            $multi = 1.2;
+        } else if($brand == 'Peugeot'){
+            $multi = 1.2;
+        } else if($brand == 'Renault'){
+            $multi = 1.2;
+        } else if($brand == 'Skoda'){
+            $multi = 1.2;
+        } else if($brand == 'Smart'){
+            $multi = 1.5;
+        } else if($brand == 'BMW'){
+            $multi = 1.8;
+        } else if($brand == 'Toyota'){
+            $multi = 1.3;
+        }
+
+        return $multi;
     }
 
     //Stampa la var $_SESSION (debug purpose)

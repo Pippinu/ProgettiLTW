@@ -237,7 +237,7 @@ $(document).ready(function(){
         })
     })
 
-    $btnCards = $('button[id^="btnCardInfo"]');
+    $btnCards = $('button[id^="btnCard"]');
     $btnCards.each(function(){
         $(this).click(function(){
             var values = JSON.parse($(this).attr('data-autovalue'));
@@ -269,6 +269,8 @@ $(document).ready(function(){
     $('#pagaBtn').click(function(){
         $marchio = $(this).attr('data-autoMarchio');
         $nome = $(this).attr('data-autoNome');
+        console.log('marchio -> ' + $marchio);
+        console.log('nome -> ' + $nome);
 
         $.ajax({
             type: 'POST',
@@ -311,7 +313,7 @@ $(document).ready(function(){
         // window.setInterval(titleCardSize(), 500);
     })
 
-    $btnsInfo = $('button[id^="btnCardInfo"]');
+    $btnsInfo = $('button[id^="carInfo"]');
     $btnsInfo.each(function(){
         $(this).click(function(){
             

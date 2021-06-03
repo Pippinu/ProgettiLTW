@@ -390,7 +390,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class='col-lg-5 col-md-6 col-sm-6'>
+                                <div class='col-lg-5 col-md-6 col-sm-6 col-12 mb-2'>
                                     <div class="input-group">
                                         <input id="dateEnd" type="text" name="dataA" class="form-control date" placeholder="Data fine noleggio" aria-label="Data fine noleggio" aria-describedby="basic-addon2">
                                         <div class="input-group-append">

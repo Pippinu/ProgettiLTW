@@ -1,7 +1,8 @@
 <?php
     session_start();
     $marchioNome =  $_POST['marchioNome'];
-
+    echo '<script>console.log('.$marchioNome.');</script>';
+    
     if(isset($_SESSION["sessionAuto"][$marchioNome])){
         $autoValue = $_SESSION["sessionAuto"][$marchioNome];
         //Connetto al DB, se errore chiama die(...)
