@@ -23,7 +23,6 @@ Progetto per Linguaggi e tecnologie per il web
 * CSS
   * style.css: il file è stato creato con il compilatore SASS (preprocessore di css), contiene alcune modifiche manuali al CSS del progetto
 
-Nel seguente progetto sono stati utilizzati: Html, Javascript, CSS, Bootstrap, JQuery, Ajax, PHP, Json
-Il progetto risulta completamente responsive grazie a tag offerti da Bootstrap 5
+Nel seguente progetto sono stati utilizzati: Html, Javascript, CSS, Bootstrap, JQuery, Ajax, PHP, Json. Inoltre il progetto risulta completamente responsive grazie a tag offerti da Bootstrap 5
 
 (Ogni file al suo interno contiene piccoli commenti relativi alle varie funzioni presenti)
