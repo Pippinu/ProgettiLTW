@@ -546,7 +546,7 @@
 
                                 $autoValues = $_SESSION['sessionAuto'][$row[2] . $row[1]];
                                 
-                                // Aumentare card height ad SM, provare con media-queries
+                                // Aumentare card height ad SM, provare con media-queries, DA ELIMINARE
                                 // echo '<div id=card'. $autoValues['marchio'] . $autoValues['nome'] .' class="card col-xl-3 col-lg-4 col-md-6 col-sm-12 border-1 border-dark px-0">';
                                 // echo    '<img src="../img/imgAuto/'. $autoValues['img'] .'" class="card-img-top mt-1 fluidImg px-1" alt="NO IMAGE">';
                                 // echo    '<div class="card-body">';
@@ -589,6 +589,7 @@
                                                 echo '</div>';
                                             echo '</div>';
 
+                                            //DA ELIMINARE
                                             // echo '<div id="infoContainer" class="row w-100 h-100 mx-0">';
                                             //     echo '<div id="carInfoPadding'. $autoValues['marchio'] . $autoValues['nome'] .'"></div>';
                                             //     echo '<div id="carInfo'. $autoValues['marchio'] . $autoValues['nome'] .'"" class="pe-0">';
@@ -602,6 +603,7 @@
                                         echo '</div>';
                                         
                                         echo '<div class="card-footer inhBg mt-1 d-grid px-1">';
+                                            //DA ELIMINARE
                                             // echo '<div class="row">';
                                             //     echo '<div class="col-7 px-1 bg-light rounded rounded-3 border border-1 border-dark">';
                                             //         echo '<table class="table priceTable text-center mb-0">';
@@ -631,6 +633,7 @@
                                             //     echo '</div>';
                                             // echo '</div>';
                                             echo '<div id="priceCar" class="d-inline-flex text-center">';
+                                                //DA ELIMINARE
                                                 // echo '<p class="">Prezzo: </p>';
                                                 // echo '<p class="">16.00$ </p>';
                                                 // echo '<p class=" text-danger">- JUNE21 (10%) </p>';
@@ -790,6 +793,7 @@
         session_start(); 
     }
 
+    //Funzione che restituisce il valore moltiplicativo del prezzo per marchio dell'auto
     function multiplyBrand($auto){
         $brand = $auto['marchio'];
         $multi = 0;
