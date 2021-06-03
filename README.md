@@ -1,16 +1,16 @@
 # ProgettiLTW
 Progetto per Linguaggi e tecnologie per il web
-* HTML:
+* HTML
   * offerte.html: file Ajax utilizzato nell'attivazione della card "Offerte del mese!" presente nella pagina iziale index.php
   * prezzi.html: file Ajax utilizzato nell'attivazione della card "Scopri i nostri prezzi!" presente nella pagina iziale index.php 
   * sceglinoi.html: file Ajax utilizzato nell'attivazione della card "Perchè scegliere noi!" presente nella pagina iziale index.php
 
 * IMG: cartella contente immagini utilizzate nella pagina iniziale e nell'icona utilizzata nel button "Il mio profilo". File contenente anche immagini relative alle auto utilizzate
 
-* JS:
+* JS
   * main.js: file contenente tutti gli script del progetto, ognuno dei quali viene commentato all'interno del file stesso
 
-* PHP:
+* PHP
   * index.php: il file ha lo scopo di far visualizzare la pagina iniziale del progetto. (Per maggiori informazioni consultare i commenti presenti nel file)
   * logout.php: file che distrugge la variabile $_SESSION
   * rentCatalogPage.php: file che mostra il catalogo dei veicoli disponibili 
