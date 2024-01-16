@@ -1,4 +1,4 @@
-# ProgettiLTW
+# RentACar.com
 Progetto per Linguaggi e tecnologie per il web
 * HTML
   * offerte.html: file Ajax utilizzato nell'attivazione della card "Offerte del mese!" presente nella pagina iziale index.php
